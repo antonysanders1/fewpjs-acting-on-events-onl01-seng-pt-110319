@@ -33,3 +33,19 @@ document.addEventListener("keydown", function(e) {
         moveDodgerRight();
     }
 });
+
+function moveDodgerUp() {
+    let bottomNumbers = dodger.style.bottom.replace("px", "");
+    let bottom = parseInt(bottomNumbers, 10);
+
+    if (bottom < 360) {
+        dodger.style.bottom = `${bottom + 1}px`;
+        dodger.style.backgroundColor = "red"
+    }
+}
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "ArrowUp") {
+        moveDodgerUp();
+    }
+});
