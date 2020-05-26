@@ -38,7 +38,7 @@ function moveDodgerUp() {
     let bottomNumbers = dodger.style.bottom.replace("px", "");
     let bottom = parseInt(bottomNumbers, 10);
 
-    if (bottom < 360) {
+    if (bottom < 380) {
         dodger.style.bottom = `${bottom + 1}px`;
         dodger.style.backgroundColor = "red"
     }
@@ -46,6 +46,22 @@ function moveDodgerUp() {
 
 document.addEventListener("keydown", function(e) {
     if (e.key === "ArrowUp") {
+        moveDodgerUp();
+    }
+});
+
+function moveDodgerDown() {
+    let bottomNumbers = dodger.style.bottom.replace("px", "");
+    let bottom = parseInt(bottomNumbers, 10);
+
+    if (bottom < 0) {
+        dodger.style.bottom = `${bottom - 1}px`;
+        dodger.style.backgroundColor = "green"
+    }
+}
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "ArrowDown") {
         moveDodgerUp();
     }
 });
