@@ -62,6 +62,6 @@ function moveDodgerDown() {
 
 document.addEventListener("keydown", function(e) {
     if (e.key === "ArrowDown") {
-        moveDodgerUp();
+        moveDodgerDown();
     }
 });
